@@ -4,32 +4,29 @@
 
 Acest proiect implementeaza un client care comunica cu un server pentru a gestiona niste utilizatori si o bibliotecă de filme.
 
-## Functionalitati
 
-login_admin - efectuează autentificarea pentru admin (doar admin)
+# Client-Server Movie Library
 
-add_user - adaugă un nou utilizator normal (doar admin)
+Client C care comunică cu un server REST pentru gestionarea unei biblioteci de filme.
 
-get_users - cere toti utilizatorii de pe server (doar admin)
+## Funcționalități
+- `register`, `login`, `logout`
+- `get_movies`, `get_movie <id>`
+- `add_movie`, `delete_movie`, `delete_user`
+- Suport cookie + JWT
+- Parsare JSON cu [Parson](https://github.com/kgabis/parson)
 
-delete_user - șterge un utilizator normal (doar admin)
+## Compilare & Rulare
 
-logout_admin - efectuează delogarea pentru admin (doar admin)
+```bash
+make
+./client
+````
 
-login - efectuează autentificarea pentru utilizator normal
+## Structură
 
-get_access - cere acces pentru colectia de filme
+* `client.c` – logica principală
+* `helpers.c/.h`, `requests.c/.h` – funcții auxiliare + cereri HTTP
+* `parson.c/.h` – parsare JSON
+* `Makefile` – build rapid
 
-get_movies - cere toate filmele de pe server
-
-get_movie - cere informaţie despre un film
-
-add_movie - adaugă un film
-
-delete_movie - șterge un film
-
-update_movie - actualizeaza datele unui film
-
-logout - efectueaza delogarea utilizatorului
-
-exit - efectueaza ieșirea din program
